@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href="{{ route('home') }}"><img id="name" src="./assets/name.png" alt="name"></a>
+            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png" alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
@@ -52,13 +52,13 @@
     </nav>
 
     <div class="sidenav">
-        <a href="#"><img src="@yield('profile')">Profile</a>
+        <a href="{{ route('user_home') }}">Home</a>
+        <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
         <a href="#">Paid Items</a>
-        <a href="#">Pendings</a>
         <a href="#">Logout</a>
     </div>
 
-    <div class="container">
+    <div class="container w-90">
         @yield('content')
     </div>
 </body>

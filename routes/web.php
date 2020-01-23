@@ -12,5 +12,9 @@
 */
 
 Route::get('/home', function () {
-    return view('home');
-})->name('home');
+    return view('user.home');
+})->name('user_home');
+
+Route::get('/profile', function() {
+    return view('user.profile');
+})->name('user_profile');

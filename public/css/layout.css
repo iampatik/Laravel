@@ -2,11 +2,11 @@
 body {
     font-family: "Lato", sans-serif;
   }
-  
+
   .sidenav {
     margin-top: 62px;
     height: 100%;
-    width: 230px;
+    width: 210px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -42,9 +42,9 @@ body {
 }
 
 .container {
-    margin-left : 225px !important;
+    margin-left : 200px !important;
     margin-top : 75px;
-    margin-right : 10px !important;
+    padding-right : 0 !important;
 }
 
 p {
