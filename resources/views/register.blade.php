@@ -3,13 +3,13 @@
 @section('title', 'Signup')
 
 @section('content')
-<div class="col-sm-10 mt-3 ml-100" id="formDiv">
-    <form action="" method="post">
+<div class="col-sm-10 mt-3 ml-100 mb-5" id="formDiv">
+    <form action="" method="post" class="form">
         @csrf
         <div>
             <center>
                 <br>
-                <img src="../image/registericon.png" width="200" alt="Avatar" id="avatar">
+                <img src="../image/registericon.png" width="100" alt="Avatar" id="avatar">
                 <p>Please fill all the fields to create an account!</p>
                 <hr>
             </center>
@@ -84,7 +84,7 @@
         </div>
         <div class="form-group" id="registerButton">
             <center>
-                <button type="submit" name="submit" class="btn btn-primary btn-lg">Register</button>
+                <button type="submit" name="submit" class="btn btn-primary btn-md">Register</button>
             </center>
         </div>
     </form>
