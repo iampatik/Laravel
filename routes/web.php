@@ -26,3 +26,7 @@ Route::get('/home', function () {
 Route::get('/profile', function() {
     return view('user.profile');
 })->name('user_profile');
+///hi ahahah ar you
+Route::get('/profiletest', function() {
+    return view('user.profile');
+})->name('user_profilesss');
