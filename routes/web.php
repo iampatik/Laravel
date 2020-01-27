@@ -28,7 +28,7 @@ Route::get('/pendings', 'usersController@pendings')->name("user_pendings");
 Route::get('/search', 'usersController@search')->name("user_search");
 
 Route::get('/admin', 'adminController@home')->name('admin_home');
-Route::get('/admin/search', 'adminController@search')->name("admin_search");
+Route::post('/admin/search', 'adminController@search')->name("admin_search");
 Route::get('/admin/pendings', 'adminController@pendings')->name('admin_pendings');
 Route::get('/admin/product', 'adminController@addProduct')->name('admin_addProduct');
 Route::get('/admin/paiditems', 'adminController@paidItems')->name("admin_paid_items");

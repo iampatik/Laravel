@@ -18,7 +18,11 @@ class adminController extends Controller
 
     public function search(Request $request) {
         $products = Products::where('product_title', '=', $request->product_title)->get();
-        return view('admin.search', compact('products'));
+        if ($products != []) {
+            return view('admin.search', compact('products'));
+        } else {
+            return view('admin.search');
+        }
     }
 
     public function pendings() {

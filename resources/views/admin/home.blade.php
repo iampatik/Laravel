@@ -9,7 +9,6 @@
 @endif
 
 @foreach($products as $product)
-<form action="" class="form">
 <div class="card flex-row flex-wrap">
     <div class="card-header border-0">
         <img src="./assets/dress1.jpg" width="200" alt="">
@@ -50,6 +49,5 @@
         </form>
     </div>
 </div>
-</form>
 @endforeach
 @endsection('content')
