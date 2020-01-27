@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\users;
+use App\Models\Users;
+use DB;
 
 class usersController extends Controller
 {
@@ -31,30 +32,52 @@ class usersController extends Controller
                 [
                     'required'
                 ], 
-            'user_type' => 
-                [
-                    'required'
-                ], 
             'password' => 
                 [
                     'required',
-                    'confirmed',
-                    'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/'
+                    'min:8',
+                    'confirmed'
                 ]
         ]);
         
-        $user = new users([
-            'name' => $request['name'],
-            'username' => $request['username'],
-            'email' => $request['email'],
-            'gender' => $request['gender'],
-            'user_type' => $request['user_type'],
-            'password' => $request['password']
+        DB::beginTransaction();
+        try {
+            $user = new Users([
+                'name' => $request['name'],
+                'username' => $request['username'],
+                'email' => $request['email'],
+                'gender' => $request['gender'],
+                'password' => $request['password']
+            ]);
+    
+            $user->save();
+            DB::commit();
+            return redirect('login')->with('registered', 'Registered successfully');
+        }
+        catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->withInput()->withErrors('failed', 'Failed to register');
+        }
+    }
+    
+    public function login(Request $request){
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
         ]);
-
-        $user->save();
-
-        return view('login');
+        try {
+            $user = Users::whereUsername($request['username'])->get();
+            
+            if ($user[0]['password'] == $request['password']) {
+                return redirect('home')->with('success', 'Successful login');
+            } else {
+                return redirect()->back()->withInput()->withErrors('failed', 'Failed to login');
+            }
+        }
+        catch (\Exception $e) {
+            return redirect()->back()->withInput()->withErrors('failed', 'Failed to login');
+        }
+        // return redirect('home');
     }
 
     public function paidItems() {
@@ -72,6 +95,8 @@ class usersController extends Controller
     public function pendings() {
         return view('user.pendings');
     }
-
+    public function logout() {
+        return redirect('login')->with('logout', "successful logout");
+    }
 
 }

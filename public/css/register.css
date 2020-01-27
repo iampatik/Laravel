@@ -30,4 +30,16 @@ form {
     padding-right : 0 !important;
 }
 
+h1{
+    color:#4e4b4c;
+}
+p{
+    color:#7b7879;
+}
+
+.btn-primary{
+ width: 100%;
+ background-color: orange !important;
+ border: orange !important
+}
 

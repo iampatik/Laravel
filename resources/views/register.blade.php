@@ -3,20 +3,24 @@
 @section('title', 'Signup')
 
 @section('content')
+<style>
+</style>
 <div class="col-sm-10 mt-3 ml-100 mb-5" id="formDiv">
-    <form action="{{ route('user.register') }}" method="post" class="form">
+    <form action="" method="post" class="form">
         @csrf
         <div>
-            <center>
+            <h1>Create Account</h1>
+            <p>It's free and hardly takes more than 30 seconds</p>
+            <!-- <center>
                 <br>
                 <img src="../image/registericon.png" width="100" alt="Avatar" id="avatar">
-                <p>Please fill all the fields to create an account!</p>
+         
                 <hr>
-            </center>
+            </center> -->
         </div>
         <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control" name="name" placeholder="Name" value="{{ old('name') }}">
+                <input type="text" class="form-control " name="name" placeholder="Name" value="{{ old('name') }}">
             </div>
             <span class="text-danger">
                 @if($errors->has('name'))
@@ -25,6 +29,7 @@
             </span>
         </div>
         <div class="form-group">
+
             <div class="input-group">
                 <input type="text" class="form-control" name="username" value="{{ old('username') }}"
                     placeholder="Username">
@@ -50,31 +55,16 @@
             <div class="input-group">
                 <label><b>Gender:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" name="gender"
-                        value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" name="gender" value="Female">Female
+                        {{ old('gender') == "Male" ? "checked" : "" }} value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" name="gender" value="Female"
+                        {{ old('gender') == "Female" ? "checked" : "" }}>Female
                 </label>
-            </div>
-            <span class="text-danger">
                 @if($errors->has('gender'))
                 {{ $errors->first('gender') }}
                 @endif
-            </span>
-        </div>
-        <div class="form-group" id="userType">
-            <div class="input-group">
-                <label><b>User Type:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" name="user_type" value="buyer"
-                        {{ old('user_type') === "buyer" ? 'checked' : '' }}>Buyer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" class="form-check-input" name="user_type" value="seller"
-                        {{ old('gender') === "seller" ? 'checked' : '' }}>Seller
-                </label>
             </div>
-            <span class="text-danger">
-                @if($errors->has('user_type'))
-                {{ $errors->first('user_type') }}
-                @endif
-            </span>
         </div>
+
         <div class="form-group">
             <div class="input-group">
                 <input type="password" class="form-control" value="{{ old('password') }}" name="password"
@@ -93,11 +83,13 @@
             </div>
         </div>
         <div class="form-group" id="registerButton">
-            <center>
-                <button type="submit" name="submit" class="btn btn-primary btn-md">Register</button>
-            </center>
+
+            <button type="submit" name="submit" class="btn btn-primary">Register</button>
+
         </div>
+        Already have an account? <a href="{{route('user.login')}}">Login here</a>
     </form>
-    <div class="text-center">Already have an account? <a href="/signin">Login here</a></div>
+
+
 </div>
 @endsection('content')

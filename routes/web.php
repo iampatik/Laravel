@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('hello');
 });
 
+Route::get('/login', 'pageController@loginForm')->name('user.loginForm');
+
+Route::post('/login', 'usersController@login')->name('user.login');
+
 Route::get('/register', 'pageController@register')->name('signup');
 
 Route::post('/register', 'usersController@register')->name("user.register");
+
+Route::get('/logout', 'usersController@logout')->name("user.logout");
 
 Route::get('/paiditems', 'usersController@paidItems')->name("user_paid_items");
 

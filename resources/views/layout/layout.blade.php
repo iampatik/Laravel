@@ -42,7 +42,7 @@
         <a href="{{ route('user_profile') }}">Profile</a>
         <a href="{{ route('user_pendings') }}">Pendings</a>
         <a href="{{ route('user_paid_items') }}">Paid Items</a>
-        <a href="{{ route('signup') }}">Logout</a>
+        <a href="{{ route('user.logout') }}">Logout</a>
     </div>
 
     <div class="container w-90">

@@ -9,4 +9,8 @@ class pageController extends Controller
     public function register(){
         return view('register');
     }
+    
+    public function loginForm(){
+        return view('login');
+    }
 }

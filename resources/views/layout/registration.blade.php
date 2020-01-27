@@ -13,20 +13,20 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png"
+            <a class="navbar-brand"><img id="name" src="./assets/name.png"
                     alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
         <form class="form-inline my-2 my-lg-0">
             <a href="{{ route('signup') }}"><button class="btn btn-outline-success my-2 my-sm-0 btn-md"
-                    type="submit">Sign up</button></a>
+                    type="button">Sign up</button></a>
         </form>
         <span class="navbar-text">
         </span>
         <form class="form-inline my-2 my-lg-0">
-            <a href=""><button class="btn btn-success my-2 my-sm-0 btn-md"
-                    type="submit">Login</button></a>
+            <a href="{{ route('user.login') }}"><button class="btn btn-success my-2 my-sm-0 btn-md"
+                    type="button">Login</button></a>
         </form>
         <span class="navbar-text">
         </span>
