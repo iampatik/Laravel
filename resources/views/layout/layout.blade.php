@@ -17,27 +17,31 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png" alt="name"></a>
+            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png"
+                    alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 btn-lg" type="search" placeholder="Search" aria-label="Search">
+        <form method="get" action="{{ route('user_search') }}" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search"
+                aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit">Search</button>
         </form>
         <span class="navbar-text">
         </span>
         <form class="form-inline my-2 my-lg-0">
-            <a href=""><img id="cart" src="./assets/cart.png" width="50" alt="cart"></a>
+            <a href="{{ route('user_cart') }}"><img id="cart" src="./assets/cart.png" width="50" alt="cart"></a>
         </form>
         <span class="navbar-text">
         </span>
     </nav>
 
     <div class="sidenav">
+        <img src="./profiles/profile1.jpg" alt="profile" id="profile" width='180'>
         <a href="{{ route('user_home') }}">Home</a>
-        <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
-        <a href="#">Paid Items</a>
+        <a href="{{ route('user_profile') }}">Profile</a>
+        <a href="{{ route('user_pendings') }}">Pendings</a>
+        <a href="{{ route('user_paid_items') }}">Paid Items</a>
         <a href="{{ route('signup') }}">Logout</a>
     </div>
 

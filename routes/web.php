@@ -19,6 +19,14 @@ Route::get('/register', 'pageController@register')->name('signup');
 
 Route::post('/register', 'usersController@register')->name("user.register");
 
+Route::get('/paiditems', 'usersController@paidItems')->name("user_paid_items");
+
+Route::get('/cart', 'usersController@cart')->name("user_cart");
+
+Route::get('/pendings', 'usersController@pendings')->name("user_pendings");
+
+Route::get('/search', 'usersController@search')->name("user_search");
+
 Route::get('/home', function () {
     return view('user.home');
 })->name('user_home');

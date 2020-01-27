@@ -50,3 +50,13 @@ body {
 p {
     font-size : 12px;
 }
+
+table {
+  font-size: 13px;
+  margin-left: 3px;
+}
+
+#profile {
+  border-radius: 10%;
+  margin-left: 18px;
+}

@@ -31,6 +31,10 @@ class usersController extends Controller
                 [
                     'required'
                 ], 
+            'user_type' => 
+                [
+                    'required'
+                ], 
             'password' => 
                 [
                     'required',
@@ -52,5 +56,22 @@ class usersController extends Controller
 
         return view('login');
     }
+
+    public function paidItems() {
+        return view('user.paid_items');
+    }
+
+    public function cart() {
+        return view('user.cart');
+    }
+
+    public function search() {
+        return view('user.search');
+    }
+
+    public function pendings() {
+        return view('user.pendings');
+    }
+
 
 }

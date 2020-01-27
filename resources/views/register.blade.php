@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="col-sm-10 mt-3 ml-100 mb-5" id="formDiv">
-    <form action="" method="post" class="form">
+    <form action="{{ route('user.register') }}" method="post" class="form">
         @csrf
         <div>
             <center>
@@ -54,6 +54,11 @@
                     <input type="radio" class="form-check-input" name="gender" value="Female">Female
                 </label>
             </div>
+            <span class="text-danger">
+                @if($errors->has('gender'))
+                {{ $errors->first('gender') }}
+                @endif
+            </span>
         </div>
         <div class="form-group" id="userType">
             <div class="input-group">
@@ -64,6 +69,11 @@
                         {{ old('gender') === "seller" ? 'checked' : '' }}>Seller
                 </label>
             </div>
+            <span class="text-danger">
+                @if($errors->has('user_type'))
+                {{ $errors->first('user_type') }}
+                @endif
+            </span>
         </div>
         <div class="form-group">
             <div class="input-group">
