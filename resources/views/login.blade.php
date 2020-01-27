@@ -7,7 +7,8 @@
 <div class="col-sm-10 mt-3 ml-100 mb-5" id="formDiv">
     <form action="" method="post" class="form">
         @csrf
-        
+        <h1>Sign In</h1>
+      
       <!-- login form -->
         <div class="form-group">
             <div class="input-group">
@@ -36,10 +37,11 @@
        
         <div class="form-group" id="loginButton">
             <center>
-                <button type="submit" name="login" class="btn btn-primary btn-md">login</button>
+                <button type="submit" name="login" class="btn btn-primary">login</button>
             </center>
         </div>
+        Don't have an account yet? <a href="{{route('signup')}}">Sign up here</a>
     </form>
-    <div class="text-center">Don't have an account yet? <a href="{{route('signup')}}">Sign up here</a></div>
+ 
 </div>
 @endsection('content')

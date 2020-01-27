@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control " name="name" placeholder="Name" value="{{ old('name') }}">
+                <input type="text" class="form-control" name="name" placeholder="Name" value="{{ old('name') }}">
             </div>
             <span class="text-danger">
                 @if($errors->has('name'))
@@ -81,7 +81,7 @@
         </div>
         <div class="form-group" id="registerButton">
             
-                <button type="submit" name="submit" class="btn btn-default">Register</button>
+                <button type="submit" name="submit" class="btn btn-primary">Register</button>
             
         </div>
         Already have an account? <a href="{{route('login')}}">Login here</a>

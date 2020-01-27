@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('hello');
+    return view('home');
 });
+Route::post('/','pageController@home')->name('home');
 
 Route::get('/register', 'pageController@register')->name('signup');
 
