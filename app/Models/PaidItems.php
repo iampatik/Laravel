@@ -8,7 +8,6 @@ class PaidItems extends Model
 {
     protected $fillable = [
         'product_title',
-        'seller',
         'quantity',
         'price'
     ];//

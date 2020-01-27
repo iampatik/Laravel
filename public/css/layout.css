@@ -67,3 +67,9 @@ table {
   letter-spacing: 2px;
   font-weight: bold !important;
  }
+
+.btn-danger {
+  letter-spacing: 2px;
+  font-weight: bold !important;
+  width: 20%;
+}
