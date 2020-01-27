@@ -19,6 +19,9 @@ Route::get('/register', 'pageController@register')->name('signup');
 
 Route::post('/register', 'usersController@register')->name("user.register");
 
+//marion login routes
+Route::get('/login', 'pageController@login')->name('login');
+
 Route::get('/home', function () {
     return view('user.home');
 })->name('user_home');
@@ -26,7 +29,3 @@ Route::get('/home', function () {
 Route::get('/profile', function() {
     return view('user.profile');
 })->name('user_profile');
-///hi ahahah ar you
-Route::get('/profiletest', function() {
-    return view('user.profile');
-})->name('user_profilesss');
