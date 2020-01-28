@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('landingPage');
 });
 Route::post('/','pageController@home')->name('home');
 

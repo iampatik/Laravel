@@ -3,7 +3,8 @@
 @section('content')
 
 @overwrite
-
+    <!-- carousel -->
+    
     <div>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -12,15 +13,12 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="./image/shoppingPoster.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/image/shoppingPoster2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="/image/shoppingPoster3.jpg" alt="Third slide">
-                </div>
+                <?php
+                $img=[['/image/landingPage/shoppingPoster.jpg','First slide','active'],['/image/landingPage/shoppingPoster2.jpg','Second slide',''],['/image/landingPage/shoppingPoster3.jpg','Third slide','']];
+                foreach($img as $pic){
+                    echo "<div class='carousel-item ".$pic[2]."'><img class='d-block w-100' src='".$pic[0]."' alt='".$pic[1]."'></div>";
+                }      
+                ?>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,17 +30,10 @@
             </a>
         </div>
     <div>
-    <!-- yeeh -->
-    
-    <!-- end -->
-        <hr>
+    <!-- details of app -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-               
-                <img src="./assets/logo.png" class="animated bounce infinite" alt="Transparent MDB Logo" id="animated-img1" >
-                
-               
                 <h2>About Us</h2>
                 <div id="summary">
                     <p class="collapse" id="about">
@@ -101,62 +92,64 @@
             </div>
         </div>
     </div>
+   <!-- about the devs -->
     <div class="container-fluid">
-       <hr>
-        <center>
+    <hr>
+    <center>
         <h2>developers</h2>
-        </center>
-        <div class="container-fluid" id="developers">
-            <div class="row">
-                <div class="col-md-4" >
-                    <div style="background-color:#e9e8e8;width:90%;padding:5%;">
-                        <img src="./image/dev/patchan.png" id="dev" >
-                        <div id="summary">
-                            <p class="collapse" id="collapseSummary">
+    </center>
+    <div class="container-fluid" id="developers">
+        <div class="row">
+            <div class="col-md-4" >
+                <div style="background-color:#e9e8e8;width:90%;padding:5%;">
+                    <img src="./image/dev/patchan.png" id="dev" >
+                    <div id="summary">
+                        <p class="collapse" id="collapseSummary">
                             <b>Mr. John Patrick Tancinco</b> adipiscing elit. Nunc porttitor maximus laoreet.
                             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
-                                Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
-                            </p>
-                            <a class="collapsed" data-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary"></a>
-                        </div>
-                    </div>        
-                </div>
+                            egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
+                            Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
+                        </p>
+                        <a class="collapsed" data-toggle="collapse" href="#collapseSummary" aria-expanded="false" aria-controls="collapseSummary"></a>
+                    </div>
+                </div>        
+            </div>
 
 
-                <div class="col-md-4" >
-                    <div style="background-color:#e9e8e8;width:90%;padding:5%;">
+            <div class="col-md-4" >
+                <div style="background-color:#e9e8e8;width:90%;padding:5%;">
                     <img src="./image/dev/josephine.png" id="dev" >
-                        <div id="summary">
-                            <p class="collapse" id="collapseSummary1">
+                    <div id="summary">
+                        <p class="collapse" id="collapseSummary1">
                             <b>Ms. josephine Morre</b> adipiscing elit. Nunc porttitor maximus laoreet.
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
-                                    Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
-                            </p>
-                            <a class="collapsed" data-toggle="collapse" href="#collapseSummary1" aria-expanded="false" aria-controls="collapseSummary"></a>
-                        </div>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
+                            Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
+                        </p>
+                        <a class="collapsed" data-toggle="collapse" href="#collapseSummary1" aria-expanded="false" aria-controls="collapseSummary"></a>
                     </div>
-                </div>          
-                <div class="col-md-4" >
-                    <div style="background-color:#e9e8e8;width:90%;padding:5%;">
+                </div>
+            </div>          
+            <div class="col-md-4" >
+                <div style="background-color:#e9e8e8;width:90%;padding:5%;">
                     <img src="./image/dev/marion.jpg" id="dev">
-                        <div id="summary">
-                            <p class="collapse" id="collapseSummary2">
+                    <div id="summary">
+                        <p class="collapse" id="collapseSummary2">
                             <b>Mr. Marion Jay M. Balugo</b>, consectetur adipiscing elit. Nunc porttitor maximus laoreet.
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
-                                    Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
-                            </p>
-                            <a class="collapsed" data-toggle="collapse" href="#collapseSummary2" aria-expanded="false" aria-controls="collapseSummary"></a>
-                        </div>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas. In hac habitasse platea dictumst. Suspendisse venenatis sollicitudin erat in gravida.
+                            Sed eget nisl tristique, commodo lectus sit amet, vulputate sem. Cras porttitor lorem ipsum, sit amet iaculis massa feugiat vitae. Curabitur sapien odio, ullamcorper tincidunt interdum vitae, vestibulum eu neque. Nam leo massa, fringilla eget mauris feugiat, auctor suscipit justo.
+                        </p>
+                        <a class="collapsed" data-toggle="collapse" href="#collapseSummary2" aria-expanded="false" aria-controls="collapseSummary"></a>
                     </div>
-                </div> 
+                </div>
+            </div> 
         </div>
     </div>
     <section id="footer">
-        <div style="margin-left:20px"><br>
-        <p>@copyright 2020-2022 | all rights reserved</p>
+        <div style="margin-left:20px">
+            <br>
+            <p>@copyright 2020-2022 | all rights reserved</p>
         </div>
         
     </section>

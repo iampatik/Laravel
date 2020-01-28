@@ -93,7 +93,7 @@ class pageController extends Controller
         // return redirect('home');
     }
     public function home(){
-        return view('home');
+        return view('landingPage');
     }
 }
    
