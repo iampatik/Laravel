@@ -24,7 +24,7 @@
         <a href="{{route('home')}}" class="nav-item nav-link">home</a>
         <a href="{{route('signup')}}" class="nav-item nav-link">Sign up</a>
         <!-- marion ni nga login -->
-        <a href="{{route('login')}}" class="nav-item nav-link">Login</a>
+        <a href="{{route('loginForm')}}" class="nav-item nav-link">Login</a>
     </nav>
     <div class="container">
         @yield('content')

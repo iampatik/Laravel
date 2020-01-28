@@ -41,7 +41,7 @@
         <a href="{{ route('user_home') }}">Home</a>
         <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
         <a href="#">Paid Items</a>
-        <a href="{{ route('login') }}">Logout</a>
+        <a href="{{ route('loginForm') }}">Logout</a>
     </div>
 
     <div class="container w-90">

@@ -82,7 +82,7 @@
                 <button type="submit" name="submit" class="btn btn-primary">Register</button>
             
         </div>
-        Already have an account? <a href="{{route('login')}}">Login here</a>
+        Already have an account? <a href="{{route('loginForm')}}">Login here</a>
     </form>
 
     
