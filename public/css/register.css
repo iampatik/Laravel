@@ -10,6 +10,7 @@ body {
 }
 span {
     color: red;
+    font-size : 13px;
 }
 
 form {
@@ -32,6 +33,20 @@ p{
     color:#7b7879;
 }
 
+<<<<<<< HEAD
+h1{
+    color:#4e4b4c;
+}
+p{
+    color:#7b7879;
+}
+
+.btn-primary{
+ width: 100%;
+ background-color: orange !important;
+ border: orange !important
+}
+=======
 label{
     color: #7b7879;
 }
@@ -66,6 +81,7 @@ nav a:hover {
     width: 100%;
     background-color: #FDA50F;
   }
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
 
   #summary {
     font-size: 14px;

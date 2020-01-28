@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Paid Items')
+@section('title', 'Cart')
 
 @section('content')
 <table class="table text-center">
@@ -10,6 +10,7 @@
             <th scope="col">Title</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -21,19 +22,12 @@
                 </a>
             </td>
             <td>@mdo</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
+            <td>
+                <input type="number" class="btn btn-lg" value="1">
+            </td>
+            <td>
+                <button class="btn btn-danger btn-lg">Remove</button>
+            </td>
         </tr>
     </tbody>
 </table>

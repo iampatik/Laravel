@@ -16,16 +16,35 @@ Route::get('/', function () {
 });
 Route::post('/','pageController@home')->name('home');
 
-Route::get('/register', 'pageController@register')->name('signup');
+Route::get('/login', 'pageController@loginForm')->name('user.loginForm');
+Route::get('/register', 'pageController@registerForm')->name('signup');
+Route::post('/login', 'pageController@login')->name('user.login');
+Route::post('/register', 'pageController@register')->name("user.register");
 
-Route::post('/register', 'usersController@register')->name("user.register");
+Route::get('/logout', 'usersController@logout')->name("user.logout");
+Route::get('/home', 'usersController@home')->name('user_home');
+Route::get('/paiditems', 'usersController@paidItems')->name("user_paid_items");
+Route::get('/cart', 'usersController@cart')->name("user_cart");
+Route::get('/pendings', 'usersController@pendings')->name("user_pendings");
+Route::get('/search', 'usersController@search')->name("user_search");
 
+Route::get('/admin', 'adminController@home')->name('admin_home');
+Route::post('/admin/search', 'adminController@search')->name("admin_search");
+Route::get('/admin/pendings', 'adminController@pendings')->name('admin_pendings');
+Route::get('/admin/product', 'adminController@addProduct')->name('admin_addProduct');
+Route::post('/admin/product', 'adminController@create')->name('admin_create');
+Route::get('/admin/paiditems', 'adminController@paidItems')->name("admin_paid_items");
+
+
+<<<<<<< HEAD
+=======
 //marion login routes
 Route::get('/login', 'pageController@login')->name('login');
 
 Route::get('/home', function () {
     return view('user.home');
 })->name('user_home');
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
 
 Route::get('/profile', function() {
     return view('user.profile');

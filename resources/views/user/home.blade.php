@@ -3,6 +3,10 @@
 @section('title', 'Home')
 
 @section('content')
+@if(session()->has('success')) {
+    {{ session('success') }}
+}
+@endif
 <div class="card flex-row flex-wrap">
     <div class="card-header border-0">
         <img src="./assets/dress1.jpg" width="200" alt="">
@@ -46,7 +50,7 @@
             <ul>
                 <p class="card-text text-info">Php 999.99</p>
             </ul>
-            <a href="#" class="btn btn-primary btn-lg mb-2">ORDER</a>
+            <a href="#" class="btn btn-primary btn-lg mb-2">ADD TO CART</a>
         </form>
     </div>
 </div>

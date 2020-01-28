@@ -4,14 +4,22 @@
 
 @section('content')
 <style>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
 </style>
 <div class="col-sm-10 mt-3 ml-100 mb-5" id="formDiv">
     <form action="" method="post" class="form" >
         @csrf
         <div>
+<<<<<<< HEAD
+            <h1>Create Account</h1>
+            <p>It's free and hardly takes more than 30 seconds</p>
+=======
         <h1>Create Account</h1>
         <p>It's free and hardly takes more than 30 seconds</p>
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
             <!-- <center>
                 <br>
                 <img src="../image/registericon.png" width="100" alt="Avatar" id="avatar">
@@ -21,7 +29,7 @@
         </div>
         <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control" name="name" placeholder="Name" value="{{ old('name') }}">
+                <input type="text" class="form-control " name="name" placeholder="Name" value="{{ old('name') }}">
             </div>
             <span class="text-danger">
                 @if($errors->has('name'))
@@ -30,7 +38,11 @@
             </span>
         </div>
         <div class="form-group">
+<<<<<<< HEAD
+
+=======
         
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
             <div class="input-group">
                 <input type="text" class="form-control" name="username" value="{{ old('username') }}"
                     placeholder="Username">
@@ -56,12 +68,25 @@
             <div class="input-group">
                 <label><b>Gender:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" name="gender"
+<<<<<<< HEAD
+                        {{ old('gender') == "Male" ? "checked" : "" }} value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" class="form-check-input" name="gender" value="Female"
+                        {{ old('gender') == "Female" ? "checked" : "" }}>Female
+                </label>
+                @if($errors->has('gender'))
+                {{ $errors->first('gender') }}
+                @endif
+            </div>
+        </div>
+
+=======
                         value="Male">Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" class="form-check-input" name="gender" value="Female">Female
                 </label>
             </div>
         </div>
        
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
         <div class="form-group">
             <div class="input-group">
                 <input type="password" class="form-control" value="{{ old('password') }}" name="password"
@@ -80,6 +105,16 @@
             </div>
         </div>
         <div class="form-group" id="registerButton">
+<<<<<<< HEAD
+
+            <button type="submit" name="submit" class="btn btn-primary">Register</button>
+
+        </div>
+        Already have an account? <a href="{{route('user.login')}}">Login here</a>
+    </form>
+
+
+=======
             
                 <button type="submit" name="submit" class="btn btn-primary">Register</button>
             
@@ -88,5 +123,6 @@
     </form>
 
     
+>>>>>>> 63f69351875192790a1958fd426c519634612ee4
 </div>
 @endsection('content')

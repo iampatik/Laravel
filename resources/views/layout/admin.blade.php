@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>tamBUY - @yield('title')</title>
+    <title>tamBUY(Admin) - @yield('title')</title>
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,38 +17,29 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png"
+            <a class="navbar-brand" href="{{ route('admin_home') }}"><img id="name" src="../assets/name.png"
                     alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
-        <form method="get" action="{{ route('user_search') }}" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search"
+        <form method="post" action="{{ route('admin_search') }}" class="form-inline my-2 my-lg-0">
+        @csrf
+            <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search Product"
                 aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit">Search</button>
         </form>
         <span class="navbar-text">
         </span>
-        <form class="form-inline my-2 my-lg-0">
-            <a href="{{ route('user_cart') }}"><img id="cart" src="./assets/cart.png" width="50" alt="cart"></a>
-        </form>
-        <span class="navbar-text">
-        </span>
+        <a href="{{ route('admin_addProduct') }}"><button class="btn btn-success my-2 my-sm-0 btn-lg"
+                type="submit">Add Product</button></a>
     </nav>
 
     <div class="sidenav">
-        <img src="./profiles/profile1.jpg" alt="profile" id="profile" width='180'>
-        <a href="{{ route('user_home') }}">Home</a>
-<<<<<<< HEAD
-        <a href="{{ route('user_profile') }}">Profile</a>
-        <a href="{{ route('user_pendings') }}">Pendings</a>
-        <a href="{{ route('user_paid_items') }}">Paid Items</a>
+        <img class="btn" src="../assets/logo.png" alt="profile" id="profile" width='150'>
+        <a href="{{ route('admin_home') }}">Home</a>
+        <a href="{{ route('admin_pendings') }}">Pendings</a>
+        <a href="{{ route('admin_paid_items') }}">Paid Items</a>
         <a href="{{ route('user.logout') }}">Logout</a>
-=======
-        <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
-        <a href="#">Paid Items</a>
-        <a href="{{ route('login') }}">Logout</a>
->>>>>>> 63f69351875192790a1958fd426c519634612ee4
     </div>
 
     <div class="container w-90">
