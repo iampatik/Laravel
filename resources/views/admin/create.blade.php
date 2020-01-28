@@ -49,7 +49,7 @@
             </div>
             <div class=" form-group col-sm btn-lg">
                 <label for="price">Price</label>
-                <input type="number" class="form-control btn-lg" name="price">
+                <input type="double" class="form-control btn-lg" name="price">
             </div>
         </div>
         <br>

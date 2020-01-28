@@ -47,8 +47,6 @@ class pageController extends Controller
                 ]
         ]);
         
-        DB::beginTransaction();
-        try {
             $user = new Users([
                 'name' => $request['name'],
                 'username' => $request['username'],
@@ -57,6 +55,8 @@ class pageController extends Controller
                 'user_type' => 'user',
                 'password' => $request['password']
             ]);
+            DB::beginTransaction();
+            try {
     
             $user->save();
             DB::commit();

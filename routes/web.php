@@ -31,6 +31,7 @@ Route::get('/admin', 'adminController@home')->name('admin_home');
 Route::post('/admin/search', 'adminController@search')->name("admin_search");
 Route::get('/admin/pendings', 'adminController@pendings')->name('admin_pendings');
 Route::get('/admin/product', 'adminController@addProduct')->name('admin_addProduct');
+Route::post('/admin/product', 'adminController@create')->name('admin_create');
 Route::get('/admin/paiditems', 'adminController@paidItems')->name("admin_paid_items");
 
 
