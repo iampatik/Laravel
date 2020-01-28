@@ -39,16 +39,9 @@
     <div class="sidenav">
         <img src="./profiles/profile1.jpg" alt="profile" id="profile" width='180'>
         <a href="{{ route('user_home') }}">Home</a>
-<<<<<<< HEAD
-        <a href="{{ route('user_profile') }}">Profile</a>
-        <a href="{{ route('user_pendings') }}">Pendings</a>
-        <a href="{{ route('user_paid_items') }}">Paid Items</a>
-        <a href="{{ route('user.logout') }}">Logout</a>
-=======
         <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
         <a href="#">Paid Items</a>
         <a href="{{ route('login') }}">Logout</a>
->>>>>>> 63f69351875192790a1958fd426c519634612ee4
     </div>
 
     <div class="container w-90">
