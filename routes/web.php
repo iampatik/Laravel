@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 Route::post('/','pageController@home')->name('home');
 
-Route::get('/login', 'pageController@loginForm')->name('user.loginForm');
+Route::get('/login', 'pageController@loginForm')->name('loginForm');
 Route::get('/register', 'pageController@registerForm')->name('signup');
 Route::post('/login', 'pageController@login')->name('user.login');
 Route::post('/register', 'pageController@register')->name("user.register");
@@ -36,15 +36,12 @@ Route::post('/admin/product', 'adminController@create')->name('admin_create');
 Route::get('/admin/paiditems', 'adminController@paidItems')->name("admin_paid_items");
 
 
-<<<<<<< HEAD
-=======
 //marion login routes
-Route::get('/login', 'pageController@login')->name('login');
+
 
 Route::get('/home', function () {
     return view('user.home');
 })->name('user_home');
->>>>>>> 63f69351875192790a1958fd426c519634612ee4
 
 Route::get('/profile', function() {
     return view('user.profile');
