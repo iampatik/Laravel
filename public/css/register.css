@@ -2,9 +2,6 @@
     margin: 0 auto;
     width: 60%;
 }
-body {
-    background-color: grey;
-}
 .form-control {
     border-radius:25px;
 }
@@ -42,30 +39,33 @@ nav a{
 }
 nav a:hover {
     color: black !important;
-  } 
-  .carousel-inner img{
-      width: 100%;
-     height: 400px;
-    ;
+  }
+
+/* landing page carousel*/
+
+.carousel-inner img{
+    width: 100%;
+    height: 400px;
  }
+
  .carousel{
      margin-top: 5%;
  }
- #footer {
-    bottom: 0;
-    background-color: #FDA50F;          /* Footer height */
-  }
+
+  
+  /* about section in landingPage.blade.php */
   #dev{
-      height: 200px;
-      width: 100%;
-     
+    height: 200px;
+    width: 100%; 
   }
+
   #developers{
-      text-align: center;
+    text-align: center;
   }
+
   #developers .btn-default{
-    width: 100%;
-    background-color: #FDA50F;
+   width: 100%;
+   background-color: #FDA50F;
   }
 
   #summary {
@@ -81,18 +81,18 @@ nav a:hover {
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;  
   }
-  
   #summary p.collapsing {
       min-height: 42px !important;
   }
-  
+
   #summary a.collapsed:after  {
       content: '+ Read More';
   }
-  
+
   #summary a:not(.collapsed):after {
       content: '- Read Less';
   }
+  /* footer in landingPage.blade.php */
   #footer{
     position: fixed;
     left: 0;
@@ -101,9 +101,22 @@ nav a:hover {
     width: 100%;
     background-color: #383536;
     font-family:sans-serif;
-    color:white;
     font-size: 10px;
   }
+/* 
+
+
+
+  dont' erase under verification
+  ==============================
+  |
+  |
+  |
+  |
   h5{
       color: #7b7879;
   }
+
+
+
+*/
