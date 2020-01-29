@@ -17,12 +17,12 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href="{{ route('user_home') }}"><img id="name" src="./assets/name.png"
+            <a class="navbar-brand" href=""><img id="name" src="./assets/name.png"
                     alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
-        <form method="get" action="{{ route('user_search') }}" class="form-inline my-2 my-lg-0">
+        <form method="get" action="" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search"
                 aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit">Search</button>
@@ -30,7 +30,7 @@
         <span class="navbar-text">
         </span>
         <form class="form-inline my-2 my-lg-0">
-            <a href="{{ route('user_cart') }}"><img id="cart" src="./assets/cart.png" width="50" alt="cart"></a>
+            <a href=""><img id="cart" src="./assets/cart.png" width="50" alt="cart"></a>
         </form>
         <span class="navbar-text">
         </span>
@@ -38,10 +38,10 @@
 
     <div class="sidenav">
         <img src="./profiles/profile1.jpg" alt="profile" id="profile" width='180'>
-        <a href="{{ route('user_home') }}">Home</a>
-        <a href="{{ route('user_profile') }}"><img src="@yield('profile')">Profile</a>
-        <a href="#">Paid Items</a>
-        <a href="{{ route('loginForm') }}">Logout</a>
+        <a href="">Home</a>
+        <a href=""><img src="@yield('profile')">Profile</a>
+        <a href="">Paid Items</a>
+        <a href="{{ route('users.logout') }}">Logout</a>
     </div>
 
     <div class="container w-90">

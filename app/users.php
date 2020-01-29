@@ -17,4 +17,8 @@ class users extends Model
     ];
 
     protected $table = 'users';
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }

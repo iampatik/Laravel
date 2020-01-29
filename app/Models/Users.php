@@ -11,8 +11,10 @@ class Users extends Model
         'username',
         'email',
         'gender',
-        'user_type',
-        'password'
+        'password',
+        'api_token',
+        'remember_token',
     ];
-    //
+
+    protected $table = 'users';
 }
