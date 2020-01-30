@@ -11,6 +11,7 @@ use App\Models\Users;
 use DB;
 use Illuminate\Support\Str;
 use Hash;
+use App\Models\Admin;
 
 
 class UserLoginController extends Controller
@@ -42,24 +43,24 @@ class UserLoginController extends Controller
 
     public function login(UserLoginRequest $request){
         
+        $currentUser = Users::where('username', $request->username)->get();
+
+
         //if retrieved as a user
         if(Auth::guard('user')->attempt(['username'=>$request->username,'password'=>$request->password]))
         {
-            return redirect()->route('users.home');
+            if($currentUser[0]['user_type']=='User'){
+                return redirect()->route('users.home');
+            }else {
+                return redirect()->route('admins.home');
+            }
+            
         }
 
-        //if retrieved as an admin
-        else if(Auth::guard('admin')->attempt(['username'=>$request->username,'password'=>$request->password]))
-        {
-            return redirect()->route('admin.home');
-        }
-
-        //if account do not exist
-        if(! Users::where([['username',$request->username], ['password', $request->password]])){
-            return redirect()->back()
+        return redirect()->route('guest.loginForm')
             ->withInput($request->only('username'))
-            ->withErrors('Error', 'Invalid credentials!');
-        }
+            ->with('error', 'Invalid credentials!');
+            
     }
 
 
@@ -78,6 +79,7 @@ class UserLoginController extends Controller
                 'username' => $request['username'],
                 'email' => $request['email'],
                 'gender' => $request['gender'],
+                'user_type' => 'User',
                 'password' => Hash::make($request['password']),
                 'api_token' => Str::random(60),
             ]);
@@ -99,3 +101,18 @@ class UserLoginController extends Controller
 
 
 }
+
+
+
+
+        // if retrieved as an admin
+        // else if(Auth::guard('admin')->attempt(['username'=>$request->username,'password'=>$request->password]))
+        // {
+        //     return redirect()->route('admins.home');
+        // }
+
+                //if account do not exist
+        // if(! Users::where([['username',$request->username], ['password', $request->password]])){
+            
+            
+        // }

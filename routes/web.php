@@ -48,7 +48,7 @@
 // })->name('user_profile');
 
 
-Auth::routes();
+// Auth::routes();
 
 // Route::get('/home', 'HomeController@home')->name('home');
 
@@ -61,23 +61,43 @@ Route::group(['middleware' => 'guest:user'], function () {
     Route::get('/', function (){
         return view('landingPage');
     });
-    Route::get('/login', 'UserLoginController@showLogin')->name('user.loginForm');
-    Route::post('/login', 'UserLoginController@login')->name('user.login');
-    Route::get('/register', 'UserLoginController@showRegister')->name('user.registerForm');
-    Route::post('/register', 'UserLoginController@register')->name('user.register');
+    Route::get('/login', 'UserLoginController@showLogin')->name('guest.loginForm');
+    Route::post('/login', 'UserLoginController@login')->name('login');
+    Route::get('/register', 'UserLoginController@showRegister')->name('guest.registerForm');
+    Route::post('/register', 'UserLoginController@register')->name('guest.register');
 
 });
+
+
 
 
 Route::group(['middleware' => 'auth:user'], function() {
 
+    //user Routes
     Route::get('/userhome', 'pageController@usersHome')->name('users.home');
-    Route::get('/loggedout', 'UserLoginController@logout')->name('users.logout');
+
+    //Admin Routes
+    Route::get('/adminhome', 'pageController@adminHome')->name('admins.home');
+
+    //User and Admin Routes
+    Route::get('/logout', 'UserLoginController@logout')->name('logout');
+
 });
 
-Route::group(['middleware' => 'auth:admin'], function (){
 
-    Route::get('/adminhome', 'pageController@adminsHome')->name('admin.home');
-});
+
+
+// Route::group(['middleware' => 'auth:admin'], function() {
+
+//     Route::get('/adminhome', 'pageController@adminsHome')->name('admins.home');
+
+// });
+
+
+
+
+
+
+
 
 

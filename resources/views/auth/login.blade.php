@@ -1,4 +1,4 @@
-@extends('layouts.UserDashboard')
+@extends('layouts.GuestDashboard')
 
 @section('title','Log-in to tamBuy')
 
@@ -7,12 +7,17 @@
     <div>
         @if( session()->has('success'))
             <div class="alert alert-success">
-                {{ session('success') }}
+                <center>{{ session('success') }}</center>
+            </div>
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-danger">
+                <center>{!! session()->get('error') !!}</center>
             </div>
         @endif
         <div class="row justify-content-center">
             <div class="col-sm-5 mt-lg-5" id="formDiv">
-                <form action="{{ route('user.login') }}" method="post" class="form">
+                <form action="{{ route('login') }}" method="post" class="form">
                     @csrf
                     <h1>Sign In</h1>
                         

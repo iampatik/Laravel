@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.adminLayout')
 
 @section('title', 'Home')
 
@@ -44,8 +44,8 @@
             <ul>
                 <p class="card-text text-info" name="price">Php 12312</p>
             </ul>
-            <a href="#" class="btn btn-primary btn-lg mb-2">EDIT</a>
-            <a href="#" class="btn btn-danger btn-lg mb-2">REMOVE</a>
+            <a href="" class="btn btn-primary btn-lg mb-2">EDIT</a>
+            <a href="" class="btn btn-danger btn-lg mb-2">REMOVE</a>
         </form>
     </div>
 </div>

@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>tamBUY(Admin) - @yield('title')</title>
-    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <title>tamBUY - @yield('title')</title>
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('/') }}/css/layout.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,29 +17,32 @@
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="name">
-            <a class="navbar-brand" href=""><img id="name" src="../assets/name.png"
+            <a class="navbar-brand" href=""><img id="name" src="{{ URL::to('/') }}/assets/name.png"
                     alt="name"></a>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
-        <form method="post" action="" class="form-inline my-2 my-lg-0">
-        @csrf
-            <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search Product"
+        <form method="get" action="" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 btn-lg" name="product_title" type="search" placeholder="Search"
                 aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit">Search</button>
         </form>
         <span class="navbar-text">
         </span>
-        <a href=""><button class="btn btn-success my-2 my-sm-0 btn-lg"
-                type="submit">Add Product</button></a>
+        <form class="form-inline my-2 my-lg-0">
+            <a href=""><img id="cart" src="{{ URL::to('/') }}/assets/cart.png" width="50" alt="cart"></a>
+        </form>
+        <span class="navbar-text">
+        </span>
     </nav>
 
     <div class="sidenav">
-        <img class="btn" src="../assets/logo.png" alt="profile" id="profile" width='150'>
+        <img src="./profiles/profile1.jpg" alt="profile" id="profile" width='180'>
         <a href="">Home</a>
+        <a href="">Profile</a>
         <a href="">Pendings</a>
         <a href="">Paid Items</a>
-        <a href="{{ route('logout') }} ">Logout</a>
+        <a href="{{ route('logout') }}">Logout</a>
     </div>
 
     <div class="container w-90">

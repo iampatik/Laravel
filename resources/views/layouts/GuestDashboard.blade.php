@@ -25,9 +25,9 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
         </div>
-        <a href="{{ route('user.registerForm') }}" class="nav-item nav-link">Register</a>
+        <a href="{{ route('guest.registerForm') }}" class="nav-item nav-link">Register</a>
         <!-- marion ni nga login -->
-        <a href="{{ route('user.loginForm') }}" class="nav-item nav-link">Login</a>
+        <a href="{{ route('guest.loginForm') }}" class="nav-item nav-link">Login</a>
     </nav>
     <div>
         @yield('content') 

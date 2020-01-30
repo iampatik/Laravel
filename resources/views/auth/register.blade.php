@@ -1,8 +1,8 @@
-@extends('layouts.UserDashboard')
+@extends('layouts.GuestDashboard')
 
 @section('content')
 <div class="col-sm-5" id="formDiv" style="margin-top:100px;">
-    <form action="{{ route('user.register') }}" method="post" class="form" >
+    <form action="{{ route('guest.register') }}" method="post" class="form" >
         @csrf
         <div>
         <h1>Create Account</h1>
@@ -76,7 +76,7 @@
         <div class="form-group" id="registerButton">
                 <button type="submit" name="submit" class="btn btn-primary">Register</button>
         </div>
-        Already have an account? <a href="{{ route('user.loginForm') }}">Login here</a>
+        Already have an account? <a href="{{ route('guest.loginForm') }}">Login here</a>
     </form>
 </div>
 @endsection

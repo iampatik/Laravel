@@ -21,8 +21,9 @@ class pageController extends Controller
         return view('user.home');
     }
 
-    public function adminsHome(){
+    public function adminHome(){
         return view('admin.home');
     }
+
 }
    

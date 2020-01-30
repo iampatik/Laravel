@@ -1,4 +1,4 @@
-@extends('layouts.userDashboard')
+@extends('layouts.GuestDashboard')
 @section('title', 'Welcome to tamBuy')
 @section('content')
     <!-- carousel -->
